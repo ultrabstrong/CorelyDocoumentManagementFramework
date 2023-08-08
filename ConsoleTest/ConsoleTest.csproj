@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{452E2959-8C19-4F0E-A7B3-6684E5D514DD}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ConsoleTest</RootNamespace>
+    <AssemblyName>ConsoleTest</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Corely, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Corely.5.5.2\lib\net48\Corely.dll</HintPath>
+    </Reference>
+    <Reference Include="DocuWare.Platform.ServerClient, Version=12.0.0.0, Culture=neutral, PublicKeyToken=879da714589ba9ea, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocuWare.Platform.ServerClient.12.2.1\lib\net472\DocuWare.Platform.ServerClient.dll</HintPath>
+    </Reference>
+    <Reference Include="DocuWare.Platform.ServerClient.Extensions, Version=11.0.0.0, Culture=neutral, PublicKeyToken=879da714589ba9ea, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocuWare.Platform.ServerClient.Extensions.11.0.2\lib\net472\DocuWare.Platform.ServerClient.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DocuWare.RestClient, Version=10.0.0.0, Culture=neutral, PublicKeyToken=879da714589ba9ea, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocuWare.RestClient.10.5.358704\lib\net472\DocuWare.RestClient.dll</HintPath>
+    </Reference>
+    <Reference Include="DocuWare.UriTemplates, Version=10.0.0.0, Culture=neutral, PublicKeyToken=879da714589ba9ea, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocuWare.UriTemplates.10.5.358704\lib\net472\DocuWare.UriTemplates.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Corely.DocuWareService\Corely.DocuWareService.csproj">
+      <Project>{991d3002-c2c6-4498-95aa-060a79a4be66}</Project>
+      <Name>Corely.DocuWareService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Corely.DocuWare\Corely.DocuWare.csproj">
+      <Project>{2E952FCC-FD7F-4174-9057-13E016E7C176}</Project>
+      <Name>Corely.DocuWare</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Corely.FC2DW\Corely.FC2DW.csproj">
+      <Project>{21709175-4F88-4115-9F6C-9D09476B035D}</Project>
+      <Name>Corely.FC2DW</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Corely.FlexiCapture\Corely.FlexiCapture.csproj">
+      <Project>{6847e0d5-b026-4c04-acc9-0705868076c6}</Project>
+      <Name>Corely.FlexiCapture</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Corely.Kingstone\Corely.Kingstone.csproj">
+      <Project>{494e5dd1-8768-4ff8-bd86-e974e93b21c4}</Project>
+      <Name>Corely.Kingstone</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Corely.Sage300HH2\Corely.Sage300HH2.csproj">
+      <Project>{66ca5601-791e-4b90-b146-43d5b03a8493}</Project>
+      <Name>Corely.Sage300HH2</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
